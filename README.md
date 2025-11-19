@@ -1,33 +1,41 @@
-# 💼 JobApp - Simple Job Portal
+# 💼 JobApp - Modern Job Portal
 
-![JobApp Screenshot](/src/main/resources/jobpost.png)
+![JobApp Screenshot](/jobpost.png)
 
-A simple, full-stack Java application serving as a job portal. This project currently uses a monolithic architecture with **Spring Boot 3** on the backend and **JSP** as the view technology.
+A simple, full-stack application serving as a job portal. This project utilizes a **decoupled architecture** with a dedicated **React frontend** and a **Spring Boot RESTful backend**.
 
-This application provides basic functionalities for **browsing existing job offers** and **adding new offers** to the database.
+The application provides complete functionalities for **browsing, adding, updating, and deleting job offers (full CRUD)**, supported by a PostgreSQL database. The backend adheres strictly to the **Model-View-Controller (MVC)** pattern.
 
 ## 🌟 Key Features
 
-* **Job Offer Management:** Create, Read, Update, and Delete (CRUD) job offers.
-* **User Authentication:** Basic login and registration secured by **Spring Security**.
-* **Server-Side Rendering:** Views rendered using JSP templates.
+* **Full CRUD Functionality:** Seamlessly **Create, Read, Update, and Delete** job offers.
+* **Decoupled Architecture:** Separate codebase for frontend and backend, communicating via a **REST API**.
+* **Database Persistence:** Reliable data storage using **PostgreSQL**.
+* **Full Search and Browsing:** Functionality to search and browse all available job listings.
 
-## 💻 Tech Stack
+## 💻 Tech Stack & Architecture
 
-This project is a Java-based monolith.
+The project is structured across two main branches, representing the decoupled architecture.
 
-### Backend & Core
+### Frontend (`react-front` branch)
+The frontend is a single-page application (SPA) focused on providing a fast and dynamic user experience.
+
+* **React**: Core library for building the user interface.
+* **JavaScript/TypeScript**: Primary language for the client side.
+* **HTML5 / CSS3 / Bootstrap**: Markup and styling.
+
+### Backend (`java-backend` branch)
+The backend acts as a **RESTful API service** responsible for business logic, data persistence, and enforcing security. This layer adheres to the MVC pattern.
+
 * **Java 17+**: Core programming language.
 * **Spring Framework 6**: Main application framework.
-* **Spring Boot 3**: Used for auto-configuration and rapid development.
+* **Spring Boot 3**: Used for auto-configuration and rapid development of the API.
+* **Spring Data JPA**: Simplifies database interaction and implements the **Model** layer.
+* **PostgreSQL**: Robust relational database used for data storage.
 
-### Build
-* **Maven**: Project build automation and dependency management.
-
-### Frontend (Current)
-* **JSP (JavaServer Pages)**: Server-side view technology for dynamic HTML generation.
-* **HTML5 / CSS3**: Standard markup and styling.
-* **Bootstrap**
+### Data & Communication
+* **PostgreSQL**: Production-ready relational database.
+* **REST API**: Communication protocol between the React frontend and the Spring backend.
 
 ## ⚙️ Development & Setup
 
@@ -37,6 +45,8 @@ Ensure you have the following installed:
 
 * JDK 17 or newer.
 * Apache Maven.
+* Node.js and npm (for the React frontend).
+* A running **PostgreSQL** instance.
 
 ### 1. Project Initialization
 
